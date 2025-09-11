@@ -4,6 +4,8 @@ import json
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix, f1_score
 import os
 
+from project.preprocess import stemming
+
 # Create reports directory if it doesn't exist
 os.makedirs('./reports', exist_ok=True)
 
@@ -36,3 +38,13 @@ with open('./reports/metrics.json', 'w') as f:
 
 print("Evaluation complete. Metrics saved to ./reports/metrics.json")
 print(metrics)
+print()
+
+# In eval.py, add:
+vectorizer = joblib.load('./models/vectorizer.joblib')
+ghana_news = "John Mahama Ghana Election 2024: NDC Massive Voter Fraud Uncovered - GhanaWeb"
+ghana_news_stemmed = stemming(ghana_news)
+ghana_news_tfidf = vectorizer.transform([ghana_news_stemmed])
+prediction = model.predict(ghana_news_tfidf)
+print("Ghanaian News Prediction:", "Real" if prediction[0] == 0 else "Fake")
+print()

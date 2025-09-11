@@ -1,0 +1,6 @@
+data/train.csv
+data/test.csv
+data/x_train.npy
+data/x_test.npy
+data/y_train.npy
+data/y_test.npy

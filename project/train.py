@@ -3,7 +3,7 @@ import joblib
 from sklearn.linear_model import LogisticRegression
 import os
 
-# Create models directory if it doesn't exist
+# Ensure models directory exists
 os.makedirs('./models', exist_ok=True)
 
 # Load preprocessed data
@@ -11,7 +11,7 @@ x_train = np.load('./data/x_train.npy', allow_pickle=True)
 y_train = np.load('./data/y_train.npy', allow_pickle=True)
 
 # Train model
-model = LogisticRegression()
+model = LogisticRegression(max_iter=1000)
 model.fit(x_train, y_train)
 
 # Save model

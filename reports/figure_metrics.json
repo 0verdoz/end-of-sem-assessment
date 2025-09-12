@@ -1,0 +1,22 @@
+{
+  "roc_auc": 0.9977912306123048,
+  "pr_auc": 0.9981854810345147,
+  "confusion_matrix": [
+    [
+      2004,
+      73
+    ],
+    [
+      14,
+      2069
+    ]
+  ],
+  "error_category_counts": {
+    "satire_like": 18,
+    "sensational_real": 30,
+    "subtle_fake": 12,
+    "entity_novelty": 9,
+    "code_switch": 6,
+    "other": 12
+  }
+}

@@ -1,8 +1,3 @@
-# .github/**
-# tests/**
-# requirements.txt
-# data/**
-
 import pytest
 import os
 import json
@@ -10,7 +5,6 @@ import subprocess
 
 @pytest.mark.pipeline
 def test_pipeline_training_and_evaluation():
-    # Define paths
     data_dir = "data"
     model_dir = "models"
     metrics_path = "reports/metrics.json"
@@ -22,13 +16,14 @@ def test_pipeline_training_and_evaluation():
     if os.path.exists(metrics_path):
         os.remove(metrics_path)
 
-    # Run training
-    train_cmd = [
-        "python", "-m", "project.train",
-        "--task", "fake_news",
-        "--data_dir",
-        "--out_dir",
-    ]
+    # Run preprocessing
+    preprocess_cmd = ["python", "project/preprocess.py"]
+    preprocess_result = subprocess.run(preprocess_cmd, capture_output=True, text=True)
+    assert preprocess_result.returncode == 0, f"Preprocessing failed:\n{preprocess_result.stderr}"
+
+
+    # Run training (no CLI args)
+    train_cmd = ["python", "-m", "project.train"]
     train_result = subprocess.run(train_cmd, capture_output=True, text=True)
     assert train_result.returncode == 0, f"Training failed:\n{train_result.stderr}"
 
@@ -36,14 +31,8 @@ def test_pipeline_training_and_evaluation():
     model_file = os.path.join(model_dir, "logistic_regression_model.joblib")
     assert os.path.isfile(model_file), "Trained model file not found"
 
-    # Run evaluation
-    eval_cmd = [
-        "python", "-m", "project.eval",
-        "--task", "fake_news",
-        "--data_dir", data_dir,
-        "--model_dir", model_dir,
-        "--out", metrics_path
-    ]
+    # Run evaluation (no CLI args)
+    eval_cmd = ["python", "-m", "project.eval"]
     eval_result = subprocess.run(eval_cmd, capture_output=True, text=True)
     assert eval_result.returncode == 0, f"Evaluation failed:\n{eval_result.stderr}"
 

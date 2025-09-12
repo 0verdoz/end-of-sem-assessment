@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{castillo2011}
+Castillo, C., Mendoza, M., Poblete, B.: Information credibility on twitter. In:
+  Proceedings of WWW (2011)
+
+\bibitem{conneau2020xlmr}
+Conneau, A., et~al.: Unsupervised cross-lingual representation learning at
+  scale. ACL  (2020)
+
+\bibitem{devlin2019bert}
+Devlin, J., Chang, M.W., Lee, K., Toutanova, K.: Bert: Pre-training of deep
+  bidirectional transformers for language understanding. In: NAACL-HLT (2019)
+
+\bibitem{ogueji2021}
+Ogueji, K., Zhu, Y., Lin, J.: Afriberta: Self-active learning for low-resource
+  african languages. In: EMNLP (Findings) (2021)
+
+\bibitem{rashkin2017truth}
+Rashkin, H., Choi, E., Jang, J.Y., Volkova, S., Choi, Y.: Truth of varying
+  shades: Analyzing language in fake news and political fact-checking. In:
+  EMNLP (2017)
+
+\bibitem{shu2020fakenewsnet}
+Shu, K., Mahudeswaran, D., Wang, S., Lee, D., Liu, H.: Fakenewsnet: A data
+  repository with news content, social context and spatiotemporal information
+  for fake news research. Big Data  (2020)
+
+\bibitem{thorne2018fever}
+Thorne, J., Vlachos, A., Christodoulopoulos, C., Mittal, A.: Fever: a
+  large-scale dataset for fact extraction and verification. In: NAACL-HLT
+  (2018)
+
+\bibitem{vosoughi2018spread}
+Vosoughi, S., Roy, D., Aral, S.: The spread of true and false news online.
+  Science  \textbf{359}(6380),  1146--1151 (2018)
+
+\bibitem{wang2017liar}
+Wang, W.Y.: “liar, liar pants on fire”: A new benchmark dataset for fake
+  news detection. In: ACL (2017)
+
+\end{thebibliography}

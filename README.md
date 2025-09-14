@@ -91,7 +91,7 @@ python -m project.eval
 ## OR
 
 ```bash
-python -m project.preprocess --data_dir data --model_dir models --out reports/metrics.json
+python -m project.eval --data_dir data --model_dir models --out reports/metrics.json
 ```
 
 - Loads test data and model, outputs metrics and confusion matrix, saves metrics to `/reports/metrics.json`.
